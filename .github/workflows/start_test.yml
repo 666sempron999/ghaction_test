@@ -1,0 +1,9 @@
+name: "Basic"
+on:
+  push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Stage1
+        run: echo "Test DonNU"
