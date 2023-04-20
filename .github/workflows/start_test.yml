@@ -3,11 +3,17 @@ on:
   push
 jobs:
   download_and_run:
-    runs-on: ubuntu-latest
-#    continue-on-error: true
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest]
+        python_version: [3.7, 3,9]
+    runs-on: ${{ matrix.os}}
     steps:
       - name: Download code
         uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{matrix.python_version}}
       - name: start code
         run: python programm.py
 
