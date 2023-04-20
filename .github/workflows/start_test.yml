@@ -6,11 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Stage1
-        run: echo "Test DonNU"
-      - name: Stage2
         run: ls -la
       - name: Download code
         uses: actions/checkout@v3
-      - name: Stage3
+      - name: Stage2
         run: ls -la
+      - name: start code
+        run: python programm.py
 
