@@ -10,7 +10,7 @@ jobs:
       - name: Stage2
         run: ls -la
       - name: Download code
-        - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       - name: Stage3
           run: ls -la
 
