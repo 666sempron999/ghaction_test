@@ -2,17 +2,24 @@ name: "Basic"
 on:
   push
 jobs:
-  print:
+  download_and_run:
     runs-on: ubuntu-latest
     steps:
-      - name: Stage1
-        run: ls -la
       - name: Download code
         uses: actions/checkout@v3
-      - name: Stage2
-        run: ls -la
-      - name: install dependences
-        run: pip install tk
       - name: start code
         run: python programm.py
+
+  test_sintax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download code
+        uses: actions/checkout@v3
+      - name: 'Run PEP8'
+        uses: quentinguidee/pep8-action@v1
+        with:
+          arguments: '--max-line-length=120'
+
+
+
 
